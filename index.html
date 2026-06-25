@@ -287,8 +287,8 @@ body{font-family:'Barlow',sans-serif;background:#edf1f2;min-height:100vh;color:v
         <div class="cr-box"></div>
         <div class="cr-info">
           <div class="cr-title">Reverse Mortgage</div>
-          <div class="cr-val">Standard rate</div>
-          <input class="cr-input" id="reverse-val" type="text" value="60% Split of Gross Revenue" oninput="upd()">
+          <div class="cr-val">Auto-calculated (editable)</div>
+          <input class="cr-input" id="reverse-val" type="text" oninput="upd()">
         </div>
       </div>
     </div>
@@ -552,6 +552,7 @@ body{font-family:'Barlow',sans-serif;background:#edf1f2;min-height:100vh;color:v
     var cbpPct = cbpRaw !== null ? Math.round(cbpRaw / 2.5) * 2.5 : null;
     var cbpStr = cbpPct !== null ? cbpPct.toFixed(1).replace(/\.0$/, '') + '% Split of Gross Revenue' : '';
     document.getElementById('contrib-val').value = cbpStr;
+    document.getElementById('reverse-val').value = cbpStr;
 
     // Onboarding: banked - 15 bps / CBP - 7.5%
     var parts = [];
